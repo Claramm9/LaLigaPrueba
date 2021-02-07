@@ -6,8 +6,8 @@ interface Props {
   handleClick: () => void;
 }
 
-const Login: React.FC<Props> = ({ label, handleClick }: Props) => (
+const CustomButton: React.FC<Props> = ({ label, handleClick }: Props) => (
   <Button onClick={handleClick}>{label}</Button>
 );
 
-export default Login;
+export default CustomButton;
