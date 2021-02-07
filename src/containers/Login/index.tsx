@@ -21,7 +21,7 @@ const Login: React.FC = () => {
 
   return (
     <Wrapper>
-      <Title>Login</Title>
+      <Title>Iniciar sesión</Title>
       <Form>
         <InputField
           placeholder='Email'
@@ -34,7 +34,7 @@ const Login: React.FC = () => {
           handleChange={changeInput}
         />
       </Form>
-      <CustomButton label='Login' handleClick={onLogin} />
+      <CustomButton label='Entrar' handleClick={onLogin} />
     </Wrapper>
   );
 };
