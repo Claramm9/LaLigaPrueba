@@ -1,14 +1,14 @@
 import { Reducer } from 'redux';
-import { UserState } from '../types';
-import { Action } from '../../../base/types';
+import { UserAction, UserState } from '../types';
 
 export const initialUserState: UserState = {
   list: [],
+  // loading: true
 };
 
-export const usersReducer: Reducer<UserState, Action> = (
+export const usersReducer: Reducer<UserState, UserAction> = (
   state: UserState = initialUserState,
-  action: Action
+  action: UserAction
 ): UserState => {
   switch (action.type) {
     default:

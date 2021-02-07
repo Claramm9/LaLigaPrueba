@@ -3,8 +3,14 @@ export interface User {
   firstName: string;
   lastName: string;
   email: string;
+  avatar: string;
 }
 
 export interface UserState {
-  list: User[];  
+  list: User[];
+}
+
+export interface UserAction {
+  type: string;
+  payload: User;
 }
