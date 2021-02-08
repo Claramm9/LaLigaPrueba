@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { UserAction, UserState } from '../types';
+import { UserAction, UserResponse, UserState } from '../types';
 import * as ActionTypes from '../actionTypes';
 import { createUserFromServer, createUserListFromServer } from '../models';
 
@@ -29,7 +29,9 @@ export const usersReducer: Reducer<UserState, UserAction> = (
     case ActionTypes.GET_USER_DETAILS_SUCCESS:
       return {
         ...state,
-        selectedUser: createUserFromServer(action.payload.data),
+        selectedUser: createUserFromServer(
+          (action.payload.data as unknown) as UserResponse
+        ),
       };
     case ActionTypes.DELETE_USER_SUCCESS:
       return {
