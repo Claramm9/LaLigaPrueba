@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PRIMARY_BLUE, PRIMARY_WHITE } from '../../../base/styles/skin';
+import { PRIMARY_BLACK, PRIMARY_WHITE } from '../../../base/styles/skin';
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: ${PRIMARY_BLUE};
+  background-color: ${PRIMARY_BLACK};
 `;
 Wrapper.displayName = 'LoginWrapper';
 

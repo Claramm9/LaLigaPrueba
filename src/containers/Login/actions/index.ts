@@ -22,21 +22,3 @@ export const loginUser = (user: UserCredentials) => async (
     });
   }
 };
-
-// export const loginUser = (user: UserCredentials) => async (
-//   dispatch: Dispatch
-// ): Promise<void> => {
-//   try {
-//     const res = await axios.get('https://reqres.in/api/users');
-//     console.log('ACTION: ', res);
-//     dispatch({
-//       type: LOGIN_USER_SUCCESS,
-//       payload: res.data,
-//     });
-//   } catch (error) {
-//     dispatch({
-//       type: LOGIN_USER_ERROR,
-//       payload: error,
-//     });
-//   }
-// };
