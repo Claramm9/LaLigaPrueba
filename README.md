@@ -38,5 +38,5 @@ Se podrán ver un comentarios en la app con una mejora que habría añadido a fu
   2. Añadir un estado dirty para que cuando el usuario abandonase el form de actualizar los detalles, le saltase un modal advirtiéndole de que tiene cambios sin guardar.
   3. Modal en el logout preguntando si está seguro de que quiere salir.
   4. Modal de errores en las llamadas.
-  5. Los requisitos opcionales que se pedían (sólo he hecho algún test).
+  5. Los requisitos opcionales que se pedían.
 
