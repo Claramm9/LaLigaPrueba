@@ -5,9 +5,13 @@ Para ejecutar el proyecto sólo hay que clonarlo, ejecutar `npm install` y a con
 ## Estructura del proyecto
 
 La carpeta src del proyecto está dividida en varias subcarpetas:
+
     - assets: con los iconos usados en la app.
+    
     - base: contiene la configuración de la store y reducers de redux. Así como stilos básicos usados en toda la app y tipado general.
+    
     - components: aquí se encuentras los componentes comunes que se usan en direfentes partes de la app.
+    
     - containers: las vistas de la aplicación están divididas aquí y cada una de ellas sigue el siguiente patrón:
          - actions: con las acciones necesarias para esa vista (si las tiene).
          - actionTypes: para los tipos de acciones.
@@ -21,6 +25,7 @@ La carpeta src del proyecto está dividida en varias subcarpetas:
 ## Consideraciones adicionales
 
 He utilizado la librería **react-loader-spinner** para añadir un loader cuando no se tienen datos y también husky para chequear el 'lint' y tests antes de realizar un commit y un push.
+
 Se podrán ver 2 comentarios en la app con unas mejoras que habría añadido a futuro.
 
 ## Mejoras añadidas
