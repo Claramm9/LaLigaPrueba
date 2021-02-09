@@ -1,46 +1,37 @@
-# Getting Started with Create React App
+# Prueba técnica de Front End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para ejecutar el proyecto sólo hay que clonarlo, ejecutar `npm install` y a continuación `npm start`
 
-## Available Scripts
+## Estructura del proyecto
 
-In the project directory, you can run:
+La carpeta src del proyecto está dividida en varias subcarpetas:
+    - assets: con los iconos usados en la app.
+    - base: contiene la configuración de la store y reducers de redux. Así como stilos básicos usados en toda la app y tipado general.
+    - components: aquí se encuentras los componentes comunes que se usan en direfentes partes de la app.
+    - containers: las vistas de la aplicación están divididas aquí y cada una de ellas sigue el siguiente patrón:
+         - actions: con las acciones necesarias para esa vista (si las tiene).
+         - actionTypes: para los tipos de acciones.
+         - reducers: con los reducers utilizados en esa vista.
+         - containers: si tuviera.
+         - models: con estos modelos se pretende facilitar los cambios de código si la respuesta de back cambiase.
+         - selectors: selectores de la vista.
+         - styles: con los estilos utilizados.
+         - types: tipos concretos.
 
-### `npm start`
+## Consideraciones adicionales
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+He utilizado la librería **react-loader-spinner** para añadir un loader cuando no se tienen datos y también husky para chequear el 'lint' y tests antes de realizar un commit y un push.
+Se podrán ver 2 comentarios en la app con unas mejoras que habría añadido a futuro.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Mejoras añadidas
+  1. Loaders 
+  2. Mensaje de error en el login si no se encuentra el usuario.
 
-### `npm test`
+## Mejoras que hubiese implementado
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  1. Validación de la contraseña. 
+  2. Añadir un estado dirty para que cuando el usuario abandonase el form de actualizar los detalles, le saltase un modal advirtiéndole de que tiene cambios sin guardar.
+  3. Modal en el logout preguntando si está seguro de que quiere salir.
+  4. Modal de errores en las llamadas.
+  5. Los requisitos opcionales que se pedían (sólo he hecho algún test).
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
