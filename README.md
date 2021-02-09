@@ -26,7 +26,7 @@ La carpeta src del proyecto está dividida en varias subcarpetas:
 
 He utilizado la librería **react-loader-spinner** para añadir un loader cuando no se tienen datos y también husky para chequear el 'lint' y tests antes de realizar un commit y un push.
 
-Se podrán ver 2 comentarios en la app con unas mejoras que habría añadido a futuro.
+Se podrán ver un comentarios en la app con una mejora que habría añadido a futuro.
 
 ## Mejoras añadidas
   1. Loaders 
