@@ -16,15 +16,6 @@ export const ListWrapper = styled.div`
 `;
 ListWrapper.displayName = 'ListWrapper';
 
-export const Title = styled.div`
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: ${PRIMARY_WHITE};
-`;
-Title.displayName = 'Title';
-
 export const LoaderWrapper = styled.div`
   height: 100%;
   width: 100%;

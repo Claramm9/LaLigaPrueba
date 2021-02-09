@@ -1,11 +1,11 @@
 import { Reducer } from 'redux';
-import { UserAction, UserResponse, UserState } from '../types';
+import { User, UserAction, UserResponse, UserState } from '../types';
 import * as ActionTypes from '../actionTypes';
 import { createUserFromServer, createUserListFromServer } from '../models';
 
 export const initialUserState: UserState = {
   list: [],
-  selectedUser: undefined,
+  selectedUser: {} as User,
   page: 1,
   perPage: 6,
   total: 0,
@@ -41,13 +41,16 @@ export const usersReducer: Reducer<UserState, UserAction> = (
     case ActionTypes.UPDATE_USER_SUCCESS:
       return {
         ...state,
-        list: createUserListFromServer(action.payload.data),
+        selectedUser: createUserFromServer({
+          ...state.selectedUser,
+          ...((action.payload as unknown) as UserResponse),
+        }),
       };
     case ActionTypes.GET_USERS_ERROR:
     case ActionTypes.GET_USER_DETAILS_ERROR:
     case ActionTypes.DELETE_USER_ERROR:
     case ActionTypes.UPDATE_USER_ERROR:
-      // add error handler
+      // add error handler as improvement
       return { ...state };
     default:
       return { ...state };

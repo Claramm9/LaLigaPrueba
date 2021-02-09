@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
-import { LOGIN_USER_ERROR, LOGIN_USER_SUCCESS } from '../actionTypes';
+import {
+  LOGIN_USER_ERROR,
+  LOGIN_USER_SUCCESS,
+  RESET_TOKEN,
+} from '../actionTypes';
 import { UserCredentials } from '../types';
 
 export const loginUser = (user: UserCredentials) => async (
@@ -21,4 +25,10 @@ export const loginUser = (user: UserCredentials) => async (
       payload: error,
     });
   }
+};
+
+export const resetToken = () => async (dispatch: Dispatch): Promise<void> => {
+  dispatch({
+    type: RESET_TOKEN,
+  });
 };

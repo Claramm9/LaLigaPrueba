@@ -1,6 +1,6 @@
 import React from 'react';
 import { User } from '../../../../types';
-import arrowIcon from '../../../../../../assets/icons/arrow.png';
+import arrowIcon from '../../../../../../assets/icons/arrow.svg';
 import { Box, Icon, Info } from './styles';
 
 interface Props {

@@ -4,6 +4,8 @@ import { Input } from './styles';
 interface Props {
   placeholder: string;
   type?: string;
+  margin?: string;
+  width?: string;
   defaultValue?: string | undefined;
   value?: string | undefined;
   handleChange: (
@@ -15,6 +17,8 @@ interface Props {
 const InputField: React.FC<Props> = ({
   placeholder,
   type = 'text',
+  margin,
+  width,
   defaultValue = undefined,
   value = undefined,
   handleChange,
@@ -22,7 +26,9 @@ const InputField: React.FC<Props> = ({
   <Input
     onChange={(e) => handleChange(e, placeholder)}
     type={type}
+    margin={margin}
     value={value}
+    width={width}
     placeholder={placeholder}
     defaultValue={defaultValue}
   />

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
 import * as ActionTypes from '../actionTypes';
-import { User } from '../types';
 
 export const getUsersList = () => async (dispatch: Dispatch): Promise<void> => {
   try {
@@ -37,14 +36,13 @@ export const getUserDetails = (id: number) => async (
   }
 };
 
-export const deleteUser = (id: number) => async (
+export const deleteUserRequest = (id: number) => async (
   dispatch: Dispatch
 ): Promise<void> => {
   try {
     const res = await axios.delete(
       'https://reqres.in/api/users/:id'.replace(':id', id.toString())
     );
-    console.log('ACTION: ', res);
     dispatch({
       type: ActionTypes.DELETE_USER_SUCCESS,
       payload: res.data,
@@ -57,26 +55,28 @@ export const deleteUser = (id: number) => async (
   }
 };
 
-export const updateUser = (user: User) => async (
-  dispatch: Dispatch
-): Promise<void> => {
+export const updateUserRequest = (
+  email: string,
+  firstName: string,
+  lastName: string,
+  id: number
+) => async (dispatch: Dispatch): Promise<void> => {
   try {
     const res = await axios.put(
-      'https://reqres.in/api/users/:id'.replace(':id', user.id.toString()),
+      'https://reqres.in/api/users/:id'.replace(':id', id.toString()),
       {
-        email: user.email,
-        first_name: user.firstName,
-        last_name: user.lastName,
+        email,
+        first_name: firstName,
+        last_name: lastName,
       }
     );
-    console.log('ACTION: ', res);
     dispatch({
-      type: ActionTypes.DELETE_USER_SUCCESS,
+      type: ActionTypes.UPDATE_USER_SUCCESS,
       payload: res.data,
     });
   } catch (error) {
     dispatch({
-      type: ActionTypes.DELETE_USER_ERROR,
+      type: ActionTypes.UPDATE_USER_ERROR,
       payload: error,
     });
   }

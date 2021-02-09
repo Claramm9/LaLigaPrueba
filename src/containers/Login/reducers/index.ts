@@ -18,8 +18,13 @@ export const loginReducer: Reducer<LogingState, LoginAction> = (
         ...state,
         user: action.payload,
       };
+    case ActionTypes.RESET_TOKEN:
+      return {
+        ...state,
+        user: { token: '' },
+      };
     case ActionTypes.LOGIN_USER_ERROR:
-      // add error handler
+      // add error handler for improvement
       return { ...state };
     default:
       return { ...state };

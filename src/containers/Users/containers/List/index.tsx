@@ -3,15 +3,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import { getUserDetails, getUsersList } from '../../actions/intex';
+import { resetToken } from '../../../Login/actions';
 import { getUsers } from '../../selectors';
-import { PRIMARY_YELLOW } from '../../../../base/styles/skin';
-import { Wrapper, ListWrapper, Title, LoaderWrapper, List } from './styles';
 import UserBox from './components/UserBox';
+import { PRIMARY_YELLOW } from '../../../../base/styles/skin';
+import logoutIcon from '../../../../assets/icons/logout.svg';
+import { Wrapper, ListWrapper, LoaderWrapper, List } from './styles';
+import { TitleRow, IconRow, Icon, Title } from '../../styles';
+import { getLoginToken } from '../../../Login/selectors';
 
 const UserList: React.FC = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const token = useSelector(getLoginToken);
   const users = useSelector(getUsers);
+
+  useEffect(() => {
+    if (!token) {
+      history.push('/');
+    }
+  }, [token]);
 
   useEffect(() => {
     dispatch(getUsersList());
@@ -22,6 +33,8 @@ const UserList: React.FC = () => {
     history.push('/user/:id'.replace(':id', userId.toString()));
   };
 
+  const logout = () => dispatch(resetToken());
+
   return (
     <Wrapper>
       {!users.length && (
@@ -31,7 +44,12 @@ const UserList: React.FC = () => {
       )}
       {!!users.length && (
         <ListWrapper>
-          <Title>Usuarios</Title>
+          <TitleRow>
+            <Title>Usuarios</Title>
+            <IconRow>
+              <Icon src={logoutIcon} onClick={() => logout()} />
+            </IconRow>
+          </TitleRow>
           <List>
             {users.map((user) => (
               <UserBox

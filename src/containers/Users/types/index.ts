@@ -16,7 +16,7 @@ export interface UserResponse {
 
 export interface UserState {
   list: User[];
-  selectedUser: User | undefined;
+  selectedUser: User;
   page: number;
   perPage: number;
   total: number;
