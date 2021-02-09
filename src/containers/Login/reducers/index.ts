@@ -6,6 +6,7 @@ export const initialLoginState: LogingState = {
   user: {
     token: '',
   },
+  error: false,
 };
 
 export const loginReducer: Reducer<LogingState, LoginAction> = (
@@ -17,15 +18,19 @@ export const loginReducer: Reducer<LogingState, LoginAction> = (
       return {
         ...state,
         user: action.payload,
+        error: false,
       };
     case ActionTypes.RESET_TOKEN:
       return {
         ...state,
         user: { token: '' },
+        error: false,
       };
     case ActionTypes.LOGIN_USER_ERROR:
-      // add error handler for improvement
-      return { ...state };
+      return {
+        ...state,
+        error: true,
+      };
     default:
       return { ...state };
   }

@@ -4,13 +4,14 @@ import { useHistory } from 'react-router-dom';
 import CustomButton from '../../components/Button';
 import InputField from '../../components/Input';
 import { loginUser } from './actions';
-import { getLoginToken } from './selectors';
-import { Wrapper, Title, Form } from './styles';
+import { getLoginError, getLoginToken } from './selectors';
+import { Wrapper, Title, Form, ErrorText } from './styles';
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const token = useSelector(getLoginToken);
+  const loginError = useSelector(getLoginError);
 
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
@@ -51,6 +52,7 @@ const Login: React.FC = () => {
           handleChange={changeInput}
         />
       </Form>
+      {loginError && <ErrorText>Usuario o contraseña no válidos</ErrorText>}
       <CustomButton label='Entrar' handleClick={onLogin} />
     </Wrapper>
   );

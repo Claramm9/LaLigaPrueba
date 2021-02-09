@@ -4,6 +4,7 @@ export interface LoggedUser {
 
 export interface LogingState {
   user: LoggedUser;
+  error: boolean;
 }
 
 export interface UserCredentials {
