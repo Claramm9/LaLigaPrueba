@@ -5,3 +5,7 @@ export interface AppState {
   login: LogingState;
   users: UserState;
 }
+
+export interface Action {
+  type: string;
+}

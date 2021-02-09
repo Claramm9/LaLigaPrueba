@@ -1,9 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { configStore } from '../../base/store';
-import Details from '../Users/containers/Details';
-import List from '../Users/containers/List';
+import UserDetails from '../Users/containers/Details';
+import UserList from '../Users/containers/List';
 import Login from '../Login';
 
 import { Global } from './styles';
@@ -19,10 +20,10 @@ const App: React.FC = () => (
           <Login />
         </Route>
         <Route path='/users'>
-          <List />
+          <UserList />
         </Route>
-        <Route path='/user-details'>
-          <Details />
+        <Route path='/user/:id'>
+          <UserDetails />
         </Route>
       </Switch>
     </BrowserRouter>
