@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { PRIMARY_BLACK, PRIMARY_WHITE } from '../../../base/styles/skin';
+import {
+  PRIMARY_BLACK,
+  PRIMARY_RED,
+  PRIMARY_WHITE,
+} from '../../../base/styles/skin';
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -26,3 +30,9 @@ export const Form = styled.div`
   justify-content: ;
 `;
 Form.displayName = 'Form';
+
+export const ErrorText = styled.div`
+  font-size: 12px;
+  color: ${PRIMARY_RED};
+`;
+ErrorText.displayName = 'ErrorText';
