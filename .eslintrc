@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier"],
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "react/require-default-props": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/default": "off",
+    "import/named": "off",
+    "import/namespace": "off",
+    "import/no-named-as-default": "off",
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off",
+    "camelcase": ["off"]
+  }
+}
