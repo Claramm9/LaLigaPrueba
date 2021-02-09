@@ -6,13 +6,9 @@ Para ejecutar el proyecto sólo hay que clonarlo, ejecutar `npm install` y a con
 
 La carpeta src del proyecto está dividida en varias subcarpetas:
     - assets: con los iconos usados en la app.
-    
     - base: contiene la configuración de la store y reducers de redux. Así como stilos básicos usados en toda la app y tipado general.
-    
     - components: aquí se encuentras los componentes comunes que se usan en direfentes partes de la app.
-    
     - containers: las vistas de la aplicación están divididas aquí y cada una de ellas sigue el siguiente patrón:
-    
          - actions: con las acciones necesarias para esa vista (si las tiene).
          - actionTypes: para los tipos de acciones.
          - reducers: con los reducers utilizados en esa vista.
